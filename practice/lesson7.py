@@ -39,10 +39,11 @@ print()
 #     if not old:
 #          return "-"
 #     return f"{100.0 * (new - old) / old:+.1f}"
+# 仅修改增加%和return后符号
 
 def pct(new, old):
     if not old:
-         return "——"
+         return "—"
     return f"{100.0 * (new - old) / old:+.1f}%"
 
 print("任务 1 · pct（自己的测试）:")
