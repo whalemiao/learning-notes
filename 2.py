@@ -472,3 +472,136 @@ BMI计算器
 
 # # 这一版是来自Python-100-Days/blob/master/Day01-20/06.循环结构.md中
 # # 例子3：猜数字游戏经过ds和我手动的改版
+
+# text = input('请输入字符')
+
+# letters = 0
+# number = 0
+# space = 0
+# other = 0
+# for char in text:
+#     if char.isalpha():
+#         letters += 1
+#     elif char.isdigit():
+#         number += 1
+#     elif char.isspace():
+#         space += 1
+#     else:
+#         other += 1
+# print(f'字母:{letters}')
+# print(f'数字:{number}')
+# print(f'空格:{space}')
+# print(f'其他:{other}')
+
+"""
+找出所有水仙花数
+"""
+
+# for num in range(100, 1000):                       # 遍历所有三位数：100 到 999（range 不包含 1000)
+#     low = num % 10                                 # num % 10 取个位数
+#     mid = num // 10 % 10                           # 先 // 10 去掉个位，再 % 10 取十位数
+#     high = num // 100                              # num // 100 取百位数。
+#     if num == low ** 3 + mid ** 3 + high ** 3:     # 判断：个位³ + 十位³ + 百位³ 是否等于原数
+#         print(num)                                 # 相等就打印
+        
+"""
+正整数的反转
+"""
+# num = int(input('num = '))                          # 读取用户输入，转成整数
+# reversed_num = 0                                    # 用来存放反转后的结果，初始为 0
+# while num > 0:                                      # 只要 num 还有数字没处理完，就继续循环
+#     reversed_num = reversed_num * 10 + num % 10     # num % 10：取出 num 的最后一位。
+#     reversed_num * 10                               # num % 10：取出 num 的最后一位。reversed_num * 10：把已有的结果整体左移一位（末尾腾出空位）。再加上刚取出的最后一位，就把它拼到了结果的末尾。
+#     num //= 10                                      # num // 10 去掉最后一位，准备处理下一位。
+# print(reversed_num)                                 # 输出反转后的数。
+
+"""
+《百钱百鸡》问题
+"""
+
+# for x in range(0, 21):
+#     for y in range(0, 34):
+#         z = 100 - x - y 
+#         if 5 * x + 3 * y + z // 3 == 100 and z % 3 == 0:
+#             print(f'公鸡：{x}只， 母鸡：{y}只， 小鸡：{z}只')
+
+# items1 = [35, 12, 99, 68, 55, 35, 87]
+# items2 = ['Python', 'Java', 'Go', 'Kotlin']
+# items3 = [100, 12.3, 'Python', True]
+# print(items1)  # [35, 12, 99, 68, 55, 35, 87]
+# print(items2)  # ['Python', 'Java', 'Go', 'Kotlin']
+# print(items3)  # [100, 12.3, 'Python', True]
+
+# items4 = list(range(1, 10))
+# items5 = list('hello')
+# print(items4)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# print(items5)  # ['h', 'e', 'l', 'l', 'o']
+
+# items5 = [35, 12, 99, 45, 66]
+# items6 = [45, 58, 29]
+# items7 = ['Python', 'Java', 'JavaScript']
+# print(items5 + items6)  # [35, 12, 99, 45, 66, 45, 58, 29]
+# print(items6 + items7)  # [45, 58, 29, 'Python', 'Java', 'JavaScript']
+# items5 += items6
+# print(items5)  # [35, 12, 99, 45, 66, 45, 58, 29]
+# print(items6 * 3)  # [45, 58, 29, 45, 58, 29, 45, 58, 29]
+# print(items7 * 2)  # ['Python', 'Java', 'JavaScript', 'Python', 'Java', 'JavaScript']
+# print(29 in items6)  # True
+# print(99 in items6)  # False
+# print('C++' not in items7)     # True
+# print('Python' not in items7)  # False
+
+# items8 = ['apple', 'waxberry', 'pitaya', 'peach', 'watermelon']
+# print(items8[0])   # apple
+# print(items8[2])   # pitaya
+# print(items8[4])   # watermelon
+# items8[2] = 'durian'
+# print(items8)      # ['apple', 'waxberry', 'durian', 'peach', 'watermelon']
+# print(items8[-5])  # 'apple'
+# print(items8[-4])  # 'waxberry'
+# print(items8[-1])  # watermelon
+# items8[-4] = 'strawberry'
+# print(items8)      # ['apple', 'strawberry', 'durian', 'peach', 'watermelon']
+# print(items8[1:3:1])     # ['strawberry', 'durian']
+# print(items8[0:3:1])     # ['apple', 'strawberry', 'durian']
+# print(items8[0:5:2])     # ['apple', 'durian', 'watermelon']
+# print(items8[-4:-2:1])   # ['strawberry', 'durian']
+# print(items8[-2:-6:-1])  # ['peach', 'durian', 'strawberry', 'apple']
+# print(items8[1:3])     # ['strawberry', 'durian']
+# print(items8[:3:1])    # ['apple', 'strawberry', 'durian']
+# print(items8[::2])     # ['apple', 'durian', 'watermelon']
+# print(items8[-4:-2])   # ['strawberry', 'durian']
+# print(items8[-2::-1])  # ['peach', 'durian', 'strawberry', 'apple
+# items8[1:3] = ['x', 'o']
+# print(items8)  # ['apple', 'x', 'o', 'peach', 'watermelon']
+
+# nums1 = [1, 2, 3, 4]
+# nums2 = list(range(1, 5))
+# nums3 = [3, 2, 1]
+# print(nums1 == nums2)  # True
+# print(nums1 != nums2)  # False
+# print(nums1 <= nums3)  # True
+# print(nums2 >= nums3)  # False
+
+# languages = ['Python', 'Java', 'C++', 'Kotlin']
+# for index in range(len(languages)):
+#     print(languages[index])
+# # or
+# languages = ['Python', 'Java', 'C++', 'Kotlin']
+# for language in languages:
+#     print(language)
+
+"""
+将一颗色子掷6000次，统计每种点数出现的次数
+"""
+# import random
+
+# counters = [0] * 6
+# # 模拟掷色子记录每种点数出现的次数
+# for _ in range(6000):
+#     face = random.randrange(1, 7)
+#     counters[face - 1] += 1
+# # 输出每种点数出现的次数
+# for face in range(1, 7):
+#     print(f'{face}点出现了{counters[face - 1]}次')
+
