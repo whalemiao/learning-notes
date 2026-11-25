@@ -321,3 +321,154 @@ BMI计算器
 #     print(f'面积：{area}')
 # else:
 #     print('不能构成三角形')
+
+# # # # # # # 325 # # # # # # #
+
+"""
+每隔1秒输出一次“hello, world”，持续1小时
+"""
+
+# import time
+
+# for _ in range(3600):
+#     print('hello, world')
+#     time.sleep(1)
+
+"""
+从1到100的整数求和
+"""
+
+# total = 0
+# for i in range(1, 101):
+#     total += i
+# print(total)
+
+"""
+从1到100的偶数求和
+"""
+
+# total = 0
+# for i in range(1, 101):
+#     if i % 2 == 0:
+#         total += i
+# print(total)
+
+# # or
+
+# total = 0
+# for i in range(2, 101, 2):
+#     total += i
+# print(total)
+
+# # 当然， 更为简单的办法是使用 Python 内置的sum函数求和，这样我们连循环结构都省掉了。
+
+# print(sum(range(2, 101, 2)))
+
+# 用while循环来实现从 1 到 100 的整数求和
+
+# total = 0
+# i = 1
+# while i <= 100:
+#     total += i
+#     i += 1
+# print(total)
+
+# total = 0
+# i = 2
+# while i <= 100:
+#     total += i
+#     i += 2
+# print(total)
+
+# total = 0
+# i = 2
+# while True:
+#     total += i
+#     i += 2
+#     if i > 100:
+#         break
+# print(total)
+
+# total = 0
+# for i in range(1, 101):
+#     if i % 2 != 0:
+#         continue
+#     total += i
+# print(total)
+
+"""
+打印乘法口诀表
+"""
+
+# for i in range(1, 10):
+#     for j in range(1, i + 1):
+#         print(f'{i}×{j}={i * j}', end='\t')
+#     print()
+
+"""
+输入一个大于1的正整数判断它是不是素数
+"""
+
+# num = int(input('请输入一个正整数'))
+# end = int(num ** 0.5)
+# is_prime = True
+# for i in range(2, end + 1):
+#     if num % i == 0:
+#         is_prime = False
+#         break
+# if is_prime:
+#     if num <= 1:
+#         print(f'{num}不是素数')
+#     else:
+#         print(f'{num}是素数')
+# else:
+#     print(f'{num}不是素数')
+
+"""
+输入两个正整数求它们的最大公约数
+"""
+
+# x = int(input('x = '))
+# y = int(input('y = '))
+# for i in range(x, 0, -1):
+#     if x % i == 0 and y % i == 0:
+#         print(f'最大公因数：{i}')
+#         break
+
+# 用上面代码的找最大公约数在执行效率是有问题的。假如x的值是999999999998，y的值是999999999999，
+# 很显然两个数是互质的，最大公约数为 1。但是我们使用上面的代码，循环会重复999999999998次，这通常是难以接受的
+
+# x = int(input('x = '))
+# y = int(input('y = '))
+# while y % x != 0:
+#     x, y = y % x, x
+# print(f'最大公因数：{x}')
+"""
+猜数字小游戏
+"""
+
+# import random
+
+# answer = random.randrange(1, 101)
+# counter = 0
+# while True:
+#     try:
+#         num = int(input('请输入1~100的数字：'))
+#     except ValueError:
+#         print('请输入整数')
+#         continue
+#     if num > 100 or num < 1:
+#         print('你输入了1<或>100的数字，请输入1~100的整数')
+#         continue
+#     counter += 1
+#     if num < answer:
+#         print('猜小了')
+#     elif num > answer:
+#         print('猜大了')
+#     else:
+#         print('You Win')
+#         break
+# print(f'你一共猜了{counter}次')
+
+# # 这一版是来自Python-100-Days/blob/master/Day01-20/06.循环结构.md中
+# # 例子3：猜数字游戏经过ds和我手动的改版
